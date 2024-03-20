@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="css/pets.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <title>Pets</title>
+
+    <script>
+        function displayInformation() {
+            document.querySelector("h1").innerHTML = "Rafael Khoury"
+            document.getElementById("URL").innerHTML = document.URL;
+            document.querySelector("#items").innerHTML = document.querySelector("h2").length;
+            document.querySelector("#time").innerHTML = new Date();
+            
+        }
+
+        function copyFunction() {
+            document.querySelector("#cheer").innerHTML += "<br>Go Blue!\n"
+        }
+
+
+    </script>
 </head>
 
-<body>
+<body onload="displayInformation();">
     <a href="#main" class="skip-to-hidden" tabindex="0">Skip to Main Content</a>
     <header>
 
@@ -35,6 +51,19 @@
     </header>
 
     <main id="main">
+        <div>
+            <h2>Use JavaScript to display the following information here:</h2>
+	        <p>
+                The URL of this page is: <span id = "URL"></span><br/>
+                The number of H2 items for this page: <span id = "items"></span><br/>
+                The current date/time is: <span id = "time"></span><br/>
+            </p>
+
+		    <p oncopy="copyFunction()">Thank you for visiting!</p>
+
+	        
+            <div id="cheer"></div>
+        </div>
 
         <div class="content-div">
             <h2>Bacon Q Dog</h2>
@@ -194,6 +223,12 @@
         </div>
     </main>
     <script src="script.js"></script>
+    <script>
+        document.body.style.backgroundColor = "yellow";
+        document.body.style.margin = "30px";
+
+        
+    </script>
 
 </body>
 
